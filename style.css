@@ -1,0 +1,136 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Header */
+
+.nav ul{
+    list-style: none;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: #ee4d2d;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.nav-list{
+    display: flex;
+    gap: 10px;
+}
+
+.nav-item{
+  cursor: pointer;
+}
+
+/* Form dang nhap */
+
+.form-container{
+    background-color: #ccc;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.form{
+    background-color: #fff;
+    width: 50%;
+    padding: 10px 20px;
+    /* border: 20px solid #ccc; cach 2 */
+}
+
+.form__row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.form__label{
+    width: 14%;
+    /* default display :inline nó kh ăn width, height */
+    display: block;
+}
+
+
+.form__input{
+    width: 86%;
+}
+
+/* Column layout */
+
+.column-layout{
+    display: flex;
+    gap: 20px;
+    padding: 6px 10px;
+}
+
+/* Pedding */
+
+/* Chart */
+
+.chart-layout{
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    gap: 10px;
+    align-items: flex-end;
+    color: #fff;
+}
+
+.chart-layout__item{
+    height: var(--percent);
+    background-color:#ee4d2d;
+    padding: 10px;
+    animation: FadeIn linear 1s;
+}
+
+
+@keyframes FadeIn {
+    from {
+        height: calc(var(--percent) - 50%);
+    }
+
+    to{
+        height: var(--percent);
+    }
+}
+
+.the-end{
+    display: flex;
+    background-color: #ccc;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.the-end__first{
+    background-color: #fff;
+    width: 25%;
+    padding: 20px;
+}
+
+.the-end__second{
+    width: 25%;
+    background-color: green;
+}
+
+.the-end__second-one{
+    height: 50%;
+     padding: 10px;
+}
+
+.the-end__second-two{
+    height: 50%;
+     padding: 10px;
+}
