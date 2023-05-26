@@ -1,0 +1,38 @@
+#app{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.item-notify{
+    padding: 10px 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+    background-color: #51a351;;
+    color: #fff;
+    position: fixed;
+    top: 20px;right: 20px;
+    animation: FadeIn linear 3s;
+}
+
+/* eg: animation */
+@keyframes FadeIn {
+    
+    from{ 
+        transform: translateX(200%);
+    }
+    
+    to {
+        transform: translateX(0%);
+    }
+}
+
+.notify-left{
+    font-size: 20px;
+}
+
+.notify-right i{
+    cursor: pointer;
+}
