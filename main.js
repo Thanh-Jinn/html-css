@@ -121,6 +121,136 @@ let d = [1, 2, 4];
 // function
 /* check d nếu d là array thì in ra số 1 */
 
+// let dataUser = [
+//     {
+//         name: "Duc Thanh",
+//         address: "bg",
+//         diem: 6,
+//     },
+//     {
+//         name: "ts",
+//         address: "pt",
+//         diem: 5,
+//     },
+//     {
+//         name: "van",
+//         address: "hp",
+//         diem: 3,
+//     },
+//     {
+//         name: "van bip",
+//         address: "hp",
+//         diem: 1,
+//     },
+// ];
+
+/* tim het nhung user co dia chi o hp */
+
+// for (let i = 0; i < dataUser.length; i++) {
+//     if (dataUser[i].diem < 7) {
+//         console.log(dataUser[i]);
+//     }
+// }
+
+/* 
+    JS đua ngựa 
+    bất đồng bộ
+*/
+
+/* 
+0 cùng thời điểm | bất đồng bộ
+1 cùng thời điểm | bất đồng bộ
+2 cùng thời điểm | bất đồng bộ
+*/
+
+/* thời gian thực thi lâu */
+/* bất đồng bộ nó 7 method làm việc với mảng 90% */
+
+/* map */
+/* this cái mảng ban đầu tenArr */
+/* syntax : tenArr.map(item, index, this) */
+
+/* Funtion */
+
+/*
+ syntax 
+ c1:function TenHam() {} : decre... nó có hoisting
+ c2: dùng từ khóa khai báo biến như var , let, const TenHam = function () {}
+
+ cách thực thi:   TenHam()
+
+*/
+
+// const Sum = function () {
+//     console.log("ham chay");
+// };
+
+// Sum();
+
+/* định nghĩa hàm những bên trong nó gọi là đối số
+
+return
+
+*/
+function Sum(a, b) {
+    let c = {
+        tong: a + b,
+    };
+
+    let d = a + b; // [tho]
+
+    return c;
+}
+
+/* Gọi hàm những bên trong nó gọi là tham số  */
+// console.log(Sum(1, 2));
+
+let sum2 = Sum;
+
+// for (let i = 0; i < 1000; i++) {
+//     console.log(sum2(1, 2));
+// }
+
+// let tong = sum2(1, 2);
+// tong.age = 10;
+// tong.tong = 20;
+
+// console.log(tong);
+/* clousaure : là một biến được định nghĩa ở trong 1 hàm nhưng mình vẫn có thể sửa giá trị nó được gán ngay cả khi cái hàm chạy song và biến nó bị chết đi*/
+// console.log(sum2(1, 2));
+
+/* 
+
+[định nghĩa] => vị trí vào sum2
+mỗi lần chạy nó tạo ra 1 [hộp] không tham chiếu ra bên ngoài private trừ reference type
+
+function là Object đặc biệt
+
+*/
+
+var arr = [1, 2, 4, 50];
+var arrTwo = [1, 2, 4, 500];
+/* viết 1 hàm tính tổng các phần từ của mảng */
+/* let s = 0;  */ /* perfomance */
+
+// sum = null;
+
+if (typeof sum === "function") {
+    console.log(sum(arr));
+}
+
+function sum(array) {
+    let s = 0;
+    array.push(100);
+    for (var i = 0; i < arr.length; i++) {
+        s += arr[i];
+    }
+    return s;
+}
+
+// console.log(sum(arrTwo));
+/* build banr thiet tang tinh tai su dung OOP */
+
 let dataUser = [
     {
         name: "Duc Thanh",
@@ -144,24 +274,42 @@ let dataUser = [
     },
 ];
 
-/* tim het nhung user co dia chi o hp */
-
-// for (let i = 0; i < dataUser.length; i++) {
-//     if (dataUser[i].diem < 7) {
-//         console.log(dataUser[i]);
-//     }
-// }
-
 /* 
-    JS đua ngựa 
-    bất đồng bộ
+   1. Map
+   2. Find
+   3. Filter
+   4. Reduce
+   5. Some
+   6. findIndexOf
+   7. forEach (no async)
+
+   => nó đều duyệt qua các phần tử của mảng
+
+*/
+/* syntax TenArr.map(nhan mot funtion(item, index, this)) this là mảng ban đầu */
+/* 
+    map nó duyệt qua từng phần tử của mảng đặc biệt ở chỗ là nó trả về 1 mảng mới và nó không sửa đổi mảng cũ
+    và mảng mới có độ dài bằng mảng cũ nhưng return cái gì thì phần tử mảng mới là cái đó
+    trong SPA render dữ liệu sử dụng 100% map
 */
 
-/* 
-0 cùng thời điểm | bất đồng bộ
-1 cùng thời điểm | bất đồng bộ
-2 cùng thời điểm | bất đồng bộ
-*/
+/* cộng thêm 2 điểm cho tất cả user và lưu vào mảng mới  */
 
-/* thời gian thực thi lâu */
-/* bất đồng bộ nó 7 method làm việc với mảng 90% */
+const newArr = dataUser.map(function (item, index) {
+    return `
+    <table>
+        <div>điểm của học sinh: ${item.diem}</div>
+    </table>
+    `;
+});
+
+console.log(newArr);
+
+// var number = [50, 10, 5];
+// const newArr2 = number.map(function (item, index) {
+//     return item;
+// });
+
+// newArr2[0] = 100;
+// console.log(newArr2);
+// console.log(number);
