@@ -236,7 +236,7 @@ var arrTwo = [1, 2, 4, 500];
 // sum = null;
 
 if (typeof sum === "function") {
-    console.log(sum(arr));
+    // console.log(sum(arr));
 }
 
 function sum(array) {
@@ -253,35 +253,61 @@ function sum(array) {
 
 let dataUser = [
     {
-        name: "Duc Thanh",
+        name: "ts",
         address: "bg",
         diem: 6,
+        uuid: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
     },
     {
         name: "ts",
         address: "pt",
         diem: 5,
+        uuid: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb5d",
     },
     {
         name: "van",
         address: "hp",
         diem: 3,
+        uuid: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb4d",
     },
     {
         name: "van bip",
         address: "hp",
         diem: 1,
+        uuid: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb3d",
     },
 ];
 
+// let UserDetail = dataUser.find(function (item, index) {
+//     if (item.uuid === "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb5dd") {
+//         return item;
+//     }
+// });
+
+let UserDetail = dataUser.filter(function (item, index) {
+    if (item.name === "ts") {
+        return item;
+    }
+});
+
+// console.log(UserDetail);
+
+/* 
+ 2. Find => Duyệt qua tất cả các phần tử của mảng và khi nó tìm được 1 thằng thỏa mãn điều kiện thì dừng không lặp nữa
+  nó trả 1 item của mảng nếu điều kiện đúng sai thì trả về undefined
+
+  3.Filter => Duyệt qua tất cả các phần tử của mảng nhưng nó về tất cả những thằng thỏa mãn điều kiện và nó lưu vào 1 mảng mới
+  nếu không thằng nào thỏa mã thì là []
+*/
+
 /* 
    1. Map
-   2. Find
+   2. Find => nó trả 1 item của mảng nếu điều kiện đúng sai thì trả về null
    3. Filter
-   4. Reduce
-   5. Some
-   6. findIndexOf
    7. forEach (no async)
+   4. Reduce:
+   6. findIndex
+   5. Some
 
    => nó đều duyệt qua các phần tử của mảng
 
@@ -295,15 +321,15 @@ let dataUser = [
 
 /* cộng thêm 2 điểm cho tất cả user và lưu vào mảng mới  */
 
-const newArr = dataUser.map(function (item, index) {
-    return `
-    <table>
-        <div>điểm của học sinh: ${item.diem}</div>
-    </table>
-    `;
-});
+// const newArr = dataUser.map(function (item, index) {
+//     return `
+//     <table>
+//         <div>điểm của học sinh: ${item.diem}</div>
+//     </table>
+//     `;
+// });
 
-console.log(newArr);
+// console.log(newArr);
 
 // var number = [50, 10, 5];
 // const newArr2 = number.map(function (item, index) {
@@ -313,3 +339,172 @@ console.log(newArr);
 // newArr2[0] = 100;
 // console.log(newArr2);
 // console.log(number);
+
+const Blogs = [
+    {
+        id: 1,
+        img: "dsfdsf",
+        title: "HTML & CSS",
+        contentHTML: "<h1>sdfsdf</h1>",
+        contentMarkdown: "# sdfsdf",
+    },
+    {
+        id: 2,
+        title: "HTML & CSS 1",
+        img: "dsfdsf",
+        contentHTML: "<h1>sdfsdf</h1>",
+        contentMarkdown: "# sdfsdf",
+    },
+    {
+        id: 3,
+        title: "HTML & CSS 2",
+        img: "dsfdsf",
+        contentHTML: "<h1>sdfsdf</h1>",
+        contentMarkdown: "# sdfsdf",
+    },
+];
+
+// const ID = window.location.href.split(0, 1);
+
+let ID = 3;
+const BlogDetail = Blogs.find(function (item) {
+    if (item?.id === ID) {
+        return item;
+    }
+});
+
+// console.log(BlogDetail);
+
+let numberArr = [1, 2, 3, 5, 6, 7, 4, 5, 6, 4]; /* [2,4,6,10...] */
+
+/*  
+
+    THỏa mãn điều kiện thì dừng luôn
+    Nó để tìm index của item trong 1 arr và nếu 
+    tìm thấy nó sẽ trả về chỉ mục của cái item đó
+    không tìm thấy trả về  -1
+
+*/
+
+let HungGiaTri = numberArr.findIndex(function (item, index) {
+    if (item === 5) {
+        return true;
+    } else {
+        return false;
+    }
+});
+
+// console.log(HungGiaTri);
+
+/* 
+
+forEach: Nó Duyệt qua tất cả các phần tử của mảng nhưng nó không trả về cái gì cả: thay cho for thường bất đồng bộ
+
+*/
+
+numberArr.forEach(function (item, index) {
+    // console.log(item);
+});
+
+let tong = numberArr.reduce(function (initialValue, item) {
+    return initialValue + item;
+}, 0);
+/* 
+    initialValue.push(item * 2);
+    return initialValue; /* return cái gì thì  initialValue từ lần 2 nó là cái đó */
+
+// console.log(tong);
+
+/* 
+
+làm sao để từ lần 2 nó vẫn là [item]
+
+*/
+
+/*  
+    FinIndex:
+
+    THỏa mãn điều kiện thì dừng luôn
+    Nó để tìm index của item trong 1 arr và nếu 
+    tìm thấy nó sẽ trả về chỉ mục của cái item đó
+    không tìm thấy trả về  -1
+
+    let HungGiaTri = numberArr.findIndex(function (item, index) {
+        if (item === 5) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+
+*/
+
+let arrCore = [1, 2, 3, 1, 23, 5, 6, 7, 4, 5, 6]; /* [1,2,3,23,5,6,7,4] */
+let ArrNew = [];
+
+arrCore.forEach(function (item, index) {
+    let indexSearh = ArrNew.findIndex(function (itemChild) {
+        if (itemChild === item) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+
+    if (indexSearh === -1) {
+        ArrNew.push(item);
+    }
+});
+
+let ArrayNewReduce = arrCore.reduce(function (initialValue, item) {
+    let indexSearch = initialValue.findIndex(function (child) {
+        if (child === item) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+
+    if (indexSearch === -1) {
+        initialValue.push(item);
+    }
+
+    return initialValue;
+}, []);
+
+// console.log("ArrayNewReduce :", ArrayNewReduce);
+// console.log("ArrNew :", ArrNew);
+
+/* 
+
+    Some Duyệt qua từng phần tử của mảng và trả về 1 giá trị boolearn
+    THỏa mãn điều kiện thì dừng luôn
+    Mục đích là tìm 1 phần tử xem là có tồn trị TRONG 1 MẢNG HAY KHÔNG
+
+*/
+
+let arrCoreTwo = [1, 2, 3, 1, 23, 5, 6, 7, 4, 5, 6];
+
+let GiaTRiSOme = arrCoreTwo.some(function (item) {
+    return item === 100;
+});
+
+if (GiaTRiSOme === true) {
+    console.log("Tồn tại");
+} else {
+    console.log("Khong ton tai");
+}
+
+/* 
+
+
+like || or || option => ORM
+
+giday : Server : ORM like 
+
+*/
+
+/* toán tử , %,+-* , == & === */
+/* DOM document object model */
+/* Jquery  */
+/* Code Con Du An Kia  */
