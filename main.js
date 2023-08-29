@@ -96,12 +96,12 @@ var a= []
 
 // Object {}
 
-let a = {
-    name: "sdfsdf",
-    age: 18,
-    address: "Ha Nam",
-};
-let b = {};
+// let a = {
+//     name: "sdfsdf",
+//     age: 18,
+//     address: "Ha Nam",
+// };
+// let b = {};
 
 // a.nameKey;
 // for (let key in a) {
@@ -192,20 +192,20 @@ let d = [1, 2, 4];
 return
 
 */
-function Sum(a, b) {
-    let c = {
-        tong: a + b,
-    };
+// function Sum(a, b) {
+//     let c = {
+//         tong: a + b,
+//     };
 
-    let d = a + b; // [tho]
+//     let d = a + b; // [tho]
 
-    return c;
-}
+//     return c;
+// }
 
 /* Gọi hàm những bên trong nó gọi là tham số  */
 // console.log(Sum(1, 2));
 
-let sum2 = Sum;
+// let sum2 = Sum;
 
 // for (let i = 0; i < 1000; i++) {
 //     console.log(sum2(1, 2));
@@ -239,44 +239,44 @@ if (typeof sum === "function") {
     // console.log(sum(arr));
 }
 
-function sum(array) {
-    let s = 0;
-    array.push(100);
-    for (var i = 0; i < arr.length; i++) {
-        s += arr[i];
-    }
-    return s;
-}
+// function sum(array) {
+//     let s = 0;
+//     array.push(100);
+//     for (var i = 0; i < arr.length; i++) {
+//         s += arr[i];
+//     }
+//     return s;
+// }
 
 // console.log(sum(arrTwo));
 /* build banr thiet tang tinh tai su dung OOP */
 
-let dataUser = [
-    {
-        name: "ts",
-        address: "bg",
-        diem: 6,
-        uuid: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
-    },
-    {
-        name: "ts",
-        address: "pt",
-        diem: 5,
-        uuid: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb5d",
-    },
-    {
-        name: "van",
-        address: "hp",
-        diem: 3,
-        uuid: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb4d",
-    },
-    {
-        name: "van bip",
-        address: "hp",
-        diem: 1,
-        uuid: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb3d",
-    },
-];
+// let dataUser = [
+//     {
+//         name: "ts",
+//         address: "bg",
+//         diem: 6,
+//         uuid: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
+//     },
+//     {
+//         name: "ts",
+//         address: "pt",
+//         diem: 5,
+//         uuid: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb5d",
+//     },
+//     {
+//         name: "van",
+//         address: "hp",
+//         diem: 3,
+//         uuid: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb4d",
+//     },
+//     {
+//         name: "van bip",
+//         address: "hp",
+//         diem: 1,
+//         uuid: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb3d",
+//     },
+// ];
 
 // let UserDetail = dataUser.find(function (item, index) {
 //     if (item.uuid === "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb5dd") {
@@ -284,11 +284,11 @@ let dataUser = [
 //     }
 // });
 
-let UserDetail = dataUser.filter(function (item, index) {
-    if (item.name === "ts") {
-        return item;
-    }
-});
+// let UserDetail = dataUser.filter(function (item, index) {
+//     if (item.name === "ts") {
+//         return item;
+//     }
+// });
 
 // console.log(UserDetail);
 
@@ -340,38 +340,38 @@ let UserDetail = dataUser.filter(function (item, index) {
 // console.log(newArr2);
 // console.log(number);
 
-const Blogs = [
-    {
-        id: 1,
-        img: "dsfdsf",
-        title: "HTML & CSS",
-        contentHTML: "<h1>sdfsdf</h1>",
-        contentMarkdown: "# sdfsdf",
-    },
-    {
-        id: 2,
-        title: "HTML & CSS 1",
-        img: "dsfdsf",
-        contentHTML: "<h1>sdfsdf</h1>",
-        contentMarkdown: "# sdfsdf",
-    },
-    {
-        id: 3,
-        title: "HTML & CSS 2",
-        img: "dsfdsf",
-        contentHTML: "<h1>sdfsdf</h1>",
-        contentMarkdown: "# sdfsdf",
-    },
-];
+// const Blogs = [
+//     {
+//         id: 1,
+//         img: "dsfdsf",
+//         title: "HTML & CSS",
+//         contentHTML: "<h1>sdfsdf</h1>",
+//         contentMarkdown: "# sdfsdf",
+//     },
+//     {
+//         id: 2,
+//         title: "HTML & CSS 1",
+//         img: "dsfdsf",
+//         contentHTML: "<h1>sdfsdf</h1>",
+//         contentMarkdown: "# sdfsdf",
+//     },
+//     {
+//         id: 3,
+//         title: "HTML & CSS 2",
+//         img: "dsfdsf",
+//         contentHTML: "<h1>sdfsdf</h1>",
+//         contentMarkdown: "# sdfsdf",
+//     },
+// ];
 
 // const ID = window.location.href.split(0, 1);
 
-let ID = 3;
-const BlogDetail = Blogs.find(function (item) {
-    if (item?.id === ID) {
-        return item;
-    }
-});
+// let ID = 3;
+// const BlogDetail = Blogs.find(function (item) {
+//     if (item?.id === ID) {
+//         return item;
+//     }
+// });
 
 // console.log(BlogDetail);
 
@@ -386,13 +386,13 @@ let numberArr = [1, 2, 3, 5, 6, 7, 4, 5, 6, 4]; /* [2,4,6,10...] */
 
 */
 
-let HungGiaTri = numberArr.findIndex(function (item, index) {
-    if (item === 5) {
-        return true;
-    } else {
-        return false;
-    }
-});
+// let HungGiaTri = numberArr.findIndex(function (item, index) {
+//     if (item === 5) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// });
 
 // console.log(HungGiaTri);
 
@@ -402,13 +402,13 @@ forEach: Nó Duyệt qua tất cả các phần tử của mảng nhưng nó kh�
 
 */
 
-numberArr.forEach(function (item, index) {
-    // console.log(item);
-});
+// numberArr.forEach(function (item, index) {
+//     // console.log(item);
+// });
 
-let tong = numberArr.reduce(function (initialValue, item) {
-    return initialValue + item;
-}, 0);
+// let tong = numberArr.reduce(function (initialValue, item) {
+//     return initialValue + item;
+// }, 0);
 /* 
     initialValue.push(item * 2);
     return initialValue; /* return cái gì thì  initialValue từ lần 2 nó là cái đó */
@@ -439,38 +439,37 @@ làm sao để từ lần 2 nó vẫn là [item]
 
 */
 
-let arrCore = [1, 2, 3, 1, 23, 5, 6, 7, 4, 5, 6]; /* [1,2,3,23,5,6,7,4] */
-let ArrNew = [];
+// let arrCore = [1, 2, 3, 1, 23, 5, 6, 7, 4, 5, 6]; /* [1,2,3,23,5,6,7,4] */
+// let ArrNew = [];
 
-arrCore.forEach(function (item, index) {
-    let indexSearh = ArrNew.findIndex(function (itemChild) {
-        if (itemChild === item) {
-            return true;
-        } else {
-            return false;
-        }
-    });
+// arrCore.forEach(function (item, index) {
+//     let indexSearh = ArrNew.findIndex(function (itemChild) {
+//         if (itemChild === item) {
+//             return true;
+//         } else {
+//             return false;
+//         }
+//     });
 
-    if (indexSearh === -1) {
-        ArrNew.push(item);
-    }
-});
+//     if (indexSearh === -1) {
+//         ArrNew.push(item);
+//     }
+// });
 
-let ArrayNewReduce = arrCore.reduce(function (initialValue, item) {
-    let indexSearch = initialValue.findIndex(function (child) {
-        if (child === item) {
-            return true;
-        } else {
-            return false;
-        }
-    });
+// let ArrayNewReduce = arrCore.reduce(function (initialValue, item) {
+//     let indexSearch = initialValue.findIndex(function (child) {
+//         if (child === item) {
+//             return true;
+//         } else {
+//             return false;
+//         }
+//     });
 
-    if (indexSearch === -1) {
-        initialValue.push(item);
-    }
-
-    return initialValue;
-}, []);
+//     if (indexSearch === -1) {
+//         initialValue.push(item);
+//     }
+//     return initialValue;
+// }, []);
 
 // console.log("ArrayNewReduce :", ArrayNewReduce);
 // console.log("ArrNew :", ArrNew);
@@ -483,17 +482,17 @@ let ArrayNewReduce = arrCore.reduce(function (initialValue, item) {
 
 */
 
-let arrCoreTwo = [1, 2, 3, 1, 23, 5, 6, 7, 4, 5, 6];
+// let arrCoreTwo = [1, 2, 3, 1, 23, 5, 6, 7, 4, 5, 6];
 
-let GiaTRiSOme = arrCoreTwo.some(function (item) {
-    return item === 100;
-});
+// let GiaTRiSOme = arrCoreTwo.some(function (item) {
+//     return item === 100;
+// });
 
-if (GiaTRiSOme === true) {
-    console.log("Tồn tại");
-} else {
-    console.log("Khong ton tai");
-}
+// if (GiaTRiSOme === true) {
+//     console.log("Tồn tại");
+// } else {
+//     console.log("Khong ton tai");
+// }
 
 /* 
 
@@ -504,7 +503,171 @@ giday : Server : ORM like
 
 */
 
-/* toán tử , %,+-* , == & === */
+/* toán tử , %,+-* , == && === */
 /* DOM document object model */
 /* Jquery  */
 /* Code Con Du An Kia  */
+
+/* Toán tử toán học */
+// ++, --, *, /, + ,-, %,
+
+//  toán tử so sánh
+// a có bằng b hay không thì a == b
+
+/* 
+    1. so sánh về giá trị và không quan tâm đến kiểu dữ liệu  ( không khuyến khích sử dụng vì nguy hiểm khi khác kiểu dữ liệu eslin mà sử dụng cách 1 thì warning và nó muốn mình dùng cách số 2 )
+    2. so sánh về all in one mọi mặt cả về giá trị và kiểu dữ liệu 
+*/
+
+/* 
+syntax: 
+1, a == b
+2, a === b
+*/
+
+let numberOne = 10;
+let numberTwo = "10";
+
+// console.log("log :", 10 === "10");
+// console.log(Number("n"));
+
+let a = true;
+
+// if (a) {
+//     console.log("Thoa max dieu kien");
+// } else {
+//     console.log("Khong Thoa max dieu kien");
+// }
+
+let ObjectCus = [];
+
+/* toan tu 3 ngoi */
+ObjectCus.length
+    ? console.log("Thoa max dieu kien")
+    : console.log("Khong Thoa max dieu kien");
+
+/* 
+    Giá trị False : 0, "", NaN, null, undefined 
+    Giá trị True: số khác 0, chuỗi không rỗng, {}, [], 
+*/
+
+/* 
+Máy tính nó không hiẻu true or false 
+ generate 1 số khác 0 thường là số 1
+ false : 0
+ */
+
+/* 
+     Client ( Máy khách hàng người sử dụng ) => lấy 1 danh sách thành phố bất kỳ ở 1 địa điểm ( nó có thể có thành phố hoặc không có tp nào )
+
+     []
+     null;
+     
+
+     1. Việt Nam [63 phố ]
+     2. Bắc Cực []
+
+*/
+
+// true && true;
+
+// if (Client && Client.length > 0) {
+
+//     [].map(function){
+
+//         ...ObjectCus..
+//     }
+
+//     ...
+
+//     // Carsh App : Gây chết app
+//     // Lỗi trắng màn: Client riêng 1 mình nó
+
+// }
+
+// console.log(null.length);
+
+/* DOM document object model */
+
+// tại sao phải dùng DOM
+
+// [45 thanh vien]
+
+// <h1>Ten Sinh Vien</h1>
+// <h1>ma SV</h1>
+
+/* 
+    => Hắc Code ( Code cứng ) : Không khuyến cáo sử dụng 
+    => Hắc cứng : địa chỉ nhà, số điện thoại của mình, tài khoản ngân hàng => 
+*/
+
+/* 
+    Cách làm việc với DOM 
+    1. Atrributes (class, id, href)
+    2. Lấy ra các thẻ
+*/
+
+// 2. Lấy ra các thẻ
+
+// getELemenByClassName : output: HTMLCollection(1), nếu không tìm thấy HTMLCollection(0), for thường
+// getElementByID: => output là thẻ html , nếu không tìm thấy trả về null, nếu cố tình viết nhiều id trong html thì nó sẽ lấy thằng đầu tiên
+// querySelector (nhieu nha)
+// querySelectorAll (nhieu nha)
+
+// const Elements = document.getElementsByClassName("text");
+// console.log(Elements[0]);
+/* 
+    Nó gần giống mảng thì nó sẽ thừa hưởng lại mọi cái tư mảng trừ phương thức & prototype ( tùy 1 số TH )
+    output mình nhận dc nó cx gần giống mảng nhưng kh phải mảng nhưng nó cho dùng 1 phương thức nào đó có trong prototype
+    
+*/
+// console.log(document.getElementById("my-app"));
+
+/* 
+
+// querySelector (nhieu nha) đầu ra của nó là 1 thẻ html , không tìm thấy trả về null
+// querySelectorAll (nhieu nha) lấy ra tất cả NodeList, không timg thấy trả về NodeList rỗng
+NodeList: là gần giống mảng có thể dùng vòng for thường để lặp và nó cho dùng 1 phương thức của Prototype là ForEach
+    
+*/
+
+/* 
+    synta querySector('#my-app h3')
+*/
+
+// const ElementQueys = document.querySelectorAll("h1");
+
+// console.log(
+//     ElementQueys.forEach(function (el) {
+//         console.log(el);
+//     })
+// );
+
+// for (let i = 0; i < ElementQueys.length; i++) {
+//     console.log(ElementQueys[i]);
+// }
+
+// với 1 Element mình lấy ra được
+
+// Element.innerText = "Hoc lapn trinhhhh";
+
+const Element = document.querySelector("#my-app");
+
+// Element.innerText = "lorem ipsum dolor";
+// Element.innerHTML = ``;
+
+const ElementSty = document.querySelector(".text");
+
+ElementSty.innerHTML = "Lap trinh";
+
+/* 
+// querySelectorAll (nhieu nha) lấy ra tất cả NodeList, không timg thấy trả về NodeList rỗng
+NodeList: là gần giống mảng có thể dùng vòng for thường để lặp và nó cho dùng 1 phương thức của Prototype là ForEach
+    
+*/
+
+// const ELemtAll = document.querySelectorAll(".text");
+
+// ELemtAll.forEach(function (item, index) {
+//     item.innerHTML = "Học lập trình từ " + (index + 1);
+// });
