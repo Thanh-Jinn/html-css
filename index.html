@@ -11,19 +11,48 @@
             crossorigin="anonymous"
         />
         <style>
+            .box {
+                width: 200px;
+                height: 200px;
+                background: #666;
+                cursor: pointer;
+                margin-bottom: 20px;
+                margin-left: 30px;
+                border-radius: 10px;
+            }
+
             .active {
-                color: red;
+                background: red;
             }
         </style>
     </head>
-    <body>
-        <h1 class="text">Đã Nộp TIền HỌC</h1>
-        <h1 class="text">Chua Nộp TIền HỌC</h1>
-        <h1 class="text">Chua Nộp TIền HỌC</h1>
-        <h1 class="text">Chua Nộp TIền HỌC</h1>
-        <h1 class="text">Chua Nộp TIền HỌC</h1>
-        <h1 class="text">Chua Nộp TIền HỌC</h1>
-        <div id="my-app"></div>
+    <body class="container py-5">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+                >Email address</label
+            >
+            <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                data-label="email"
+            />
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+                >Password</label
+            >
+            <input
+                data-label="password"
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+            />
+        </div>
+        <button id="submit" class="btn btn-primary">Submit</button>
+
+        <a href="https://youtube.com/">Youtobe</a>
+
         <script src="./main.js"></script>
     </body>
 </html>
