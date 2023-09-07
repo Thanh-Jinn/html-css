@@ -1,166 +1,114 @@
-// ElementCus.classList.add("active");
-// ElementCus.classList.remove("active"); /* Có thì bỏ đi không thì thôi */
-// ElementCus.classList.replace(
-//     "active-11"
-// ); /* ghi de <div class="active-11"></div>; */
-// ElementCus.classList.toggle(
-//     "active"
-// ); /* Nếu không có thì nó thêm, nếu có thì bỏ đi */
-
-// const Elements = document.querySelectorAll(".box");
-
-// if (Elements && Elements.length > 0) {
-//     Elements.forEach(function (item) {
-//         item.addEventListener("click", function (e) {
-//             Elements.forEach(function (itemChild) {
-//                 if (item !== itemChild) {
-//                     handleResetElement(itemChild);
-//                 }
-//             });
-//             e.target.classList.toggle("active");
-//         });
-//     });
-// }
-
-// function handleResetElement(item) {
-//     item.classList.remove("active");
-// }
-
-// click, dbclick
-
-const Btn = document.querySelector(".btn");
-const RenderHtml = document.querySelector(".render-html");
-
-// let BtnSubmit = null;
-// let InputElement = null;
-
-// Btn.addEventListener("click", function (e) {
-//     if (RenderHtml) {
-//         RenderHtml.innerHTML = `
-//             <input type="text" class="form-control my-3 input-age" />
-//             <button class="btn btn-primary submit">Xác Nhận</button>
-//         `;
-//         BtnSubmit = document.querySelector(".submit");
-//         InputElement = document.querySelector(".input-age");
-//     }
-
-//     BtnSubmit.addEventListener("click", function (e) {
-//         if (isNaN(InputElement.value)) {
-//             alert("Vui lòng nhập đúng!!!");
-//             InputElement.value = "";
-//             return;
-//         }
-
-//         if (InputElement.value >= 18) {
-//             alert("đủ tuổi!");
-//         } else {
-//             alert("Không đủ tuổi!!!");
-//         }
-//     });
-// });
-
-// tương tác với phím : chức năng, dự liệu nhập
+ 
+import JSONARR from './data.json' assert {type: 'json'};
 
 /* 
-input, textarea
+    Learn
+        - LocalStorage
+        - JSON (JavaScript Object Notation )
+        - Promise (Bat dong bo)
+        - Fetch ( lay du lieu tu ben ngoai) 
+         * // json()  Convert từ Json  => JavaScript
+
+    Project
+        - Thoi Tiet
+        - App thương mại điện tử có sử dụng 1 chút ajax
+    
 */
+
+
+// localStorage : Lưu dữ liệu giống như object nó có key & value
+
+// làm sao để tạo nó?
+
+// localStorage
+
+// localStorage.getItem("tên-key") lấy thông tin key
+// localStorage.setItem('IsLogin', 'true') 
+// localStorage.setItem()
+// console.log(localStorage.getItem('IsLogin') === 'true') 
 
 /* 
-    change, input, blur
-
-    auto focus
+    .Net (C#), Java sping , Lavrel ....
 */
 
-// const InputElement = document.querySelector("#my-input");
 
-// InputElement.addEventListener("change", function (e) {
-//     console.log(e.target.value);
-// });
+// JSON là một chuỗi khá đặc biệt ở chỗ nó có thể biến đổi từ kiểu dữ liệu String (Json) thành JS và từ JS qua JSon
+//  Từ Js qua Json nó là trình tự mã hóa (Encode)  [1,2,3]  => '[1,2,3] ' syntax:  JSON.stringify(arr)
+// Từ Json thành Js nó là giải mã (decode) '[1,2,3]' => [1,2,3] : syntax: JSON.parse()
 
-// InputElement.addEventListener("input", function (e) {
-//     console.log(e.target.value);
-// });
 
-// InputElement.addEventListener("blur", function (e) {
-//     console.log("blur input");
-// });
+/* 
+    Quy tắc đặt tên:
+        - Phải để trong dấu nháy đôi
+        - Thằng phần tử cuối cùng không được có dấu phẩy (,)
+        - số vẫn là số
+        - null vẫn là null
+*/
 
-const InputElements = document.querySelectorAll("input");
-const BtnSubmitForm = document.querySelector("#submit");
+// let arr = '[1,2,3]'
 
-BtnSubmitForm.addEventListener("click", function (e) {
-    let isValid = true;
-    for (let i = 0; i < InputElements.length; i++) {
-        if (!InputElements[i].value) {
-            isValid = false;
-            alert(
-                "Bạn hãy nhập trường này " +
-                    InputElements[i].getAttribute("data-label")
-            );
-            InputElements[i].focus();
-            break;
-        }
-    }
+// console.log(typeof JSON.stringify(arr))
 
-    if (!isValid) {
-        return;
-    }
+// console.log(JSON.parse(arr))
 
-    /* 
-    goi du lieu o day
-     */
 
-    window.location.href = "/";
-});
+// user: null
 
-// let dataMinLength = [5, 8];
-// InputElements.forEach(function (element, index) {
-//     element.setAttribute("min-length", dataMinLength[index]);
-//     element.addEventListener("blur", function (e) {
-//         console.log(e.target.value);
-//         handleValidate(e.target.value.length, dataMinLength[index]);
-//     });
-// });
+// let userFake ={
+//     id: 1,
+//     name: 'ts'
+// } 
+// localStorage.setItem('user' , JSON.stringify(userFake))
+// let userCheck = localStorage.getItem('user')
+// let userParer = JSON.parse(userCheck)
 
-function handleValidate(value, length) {
-    if (value < length) {
-        alert("Bạn hãy nhập trường này với số kỹ tự lớn hơn " + length);
+// console.log( userParer.name )
+
+// let DataFake = JSON.stringify(JSONARR)
+
+
+// localStorage.setItem('blogs', JSON.stringify(JSON.parse(DataFake).data))
+
+// const blogsCache  = JSON.parse(localStorage.getItem('blogs'))
+
+
+// let Element = document.querySelector('.render-blogs')
+
+// if(Element && blogsCache) {
+//     let name = ''
+//     blogsCache.forEach(function(item) {
+//        name +=  `<h3>Tên Bài viết: ${item.title}</h3>`
+//     })
+//     Element.innerHTML  = name
+// }
+
+if(window.location.pathname === '/' || window.location.pathname === '/index.html' ) {
+    localStorage.setItem('count', JSON.stringify(0))
+}
+
+
+let isLogin = JSON.parse(localStorage.getItem('isLogin'))
+let count =  JSON.parse(localStorage.getItem('count')) || 0;
+
+ 
+if(!isLogin && typeof isLogin !== 'boolean') {
+    localStorage.setItem('isLogin', JSON.stringify(false))
+    window.location.href = '/login.html'
+}
+
+if(!JSON.parse(isLogin)){
+    count += 1;
+    localStorage.setItem('count', JSON.stringify(count))
+    if(count === 1) {
+        window.location.href = '/login.html'
     }
 }
 
-window.addEventListener("keydown", function (e) {
-    if (e.ctrlKey === true && e.keyCode === 82) {
-        e.preventDefault();
-    }
+const SubmitBtn = document.querySelector('#submit')
 
-    if (e.ctrlKey === true && e.keyCode === 88) {
-        window.location.reload();
-    }
-});
+SubmitBtn.addEventListener('click', function(e) {
+    /* Validate roi...... */
+    localStorage.setItem('isLogin', JSON.stringify(true))
+    window.location.href = '/'
+})
 
-/* 
-    Sự kiện mặc định
-    e.preventDefault(); Nó sẽ loại bỏ hành vi mặc định của các thẻ
-*/
-
-const AElement = document.querySelector("a");
-AElement.addEventListener("click", function (e) {
-    e.preventDefault();
-});
-
-/* 
-
-    LocalStorage
-    JSON (JavaScript Object Notation )
-    Promise (Bat dong bo)
-    Fetch ( lay du lieu tu ben ngoai)
-
-
-    Thoi Tiet
-    
-    Đầy đủ 
-    App thương mại điện tử có sử dụng 1 chút ajax
-
-
-    
-*/
